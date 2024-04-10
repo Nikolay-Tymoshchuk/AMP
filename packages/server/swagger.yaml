@@ -1,0 +1,492 @@
+tags:
+  - name: Articles
+    description: Articles API
+  - name: Auth
+    description: Authentication API
+
+paths:
+  /articles:
+    get:
+      tags:
+        - Articles
+      summary: Get a list of articles
+      parameters:
+        - in: query
+          name: page
+          description: Page number
+          type: integer
+
+        - in: query
+          name: per_page
+          description: Number of articles per page
+          type: integer
+
+        - in: query
+          name: search
+          description: Search query string
+          type: string
+
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/AllArticlesResponse'
+        '400':
+          description: ArticleId is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: Article doesn't exist
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      tags:
+        - Articles
+      summary: Create a new article
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/ArticleDTO'
+      responses:
+        '201':
+          description: Successfully created
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/Article'
+              message:
+                type: string
+                enum:
+                  - created
+              success:
+                type: boolean
+                enum:
+                  - true
+
+        '400':
+          description: articleData is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: Article already exists
+          schema:
+            $ref: '#/definitions/Error'
+  /articles/{id}:
+    get:
+      tags:
+        - Articles
+      summary: Get an article by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          default: 660f10208870e66d61d46615
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/Article'
+              message:
+                type: string
+                enum:
+                  - singleArticle
+              success:
+                type: boolean
+                enum:
+                  - true
+        '400':
+          description: ArticleId is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: Article doesn't exist
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      tags:
+        - Articles
+      summary: Update an article by ID
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          default: 660f10208870e66d61d46615
+          type: string
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/ArticleDTO'
+      responses:
+        '200':
+          description: Successfully updated
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/Article'
+              message:
+                type: string
+                enum:
+                  - updated
+              success:
+                type: boolean
+                enum:
+                  - true
+        '400':
+          description: articleData is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: Article doesn't exist or Article with link already exists
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      tags:
+        - Articles
+      summary: Delete an article by ID
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successfully deleted
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/Article'
+              message:
+                type: string
+                enum:
+                  - deleted
+              success:
+                type: boolean
+                enum:
+                  - true
+        '400':
+          description: ArticleId is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: Article doesn't exist
+          schema:
+            $ref: '#/definitions/Error'
+
+  /auth:
+    get:
+      tags:
+        - Auth
+      summary: Authenticate a user
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/User'
+              message:
+                type: string
+                enum:
+                  - authenticate
+              success:
+                type: boolean
+                enum:
+                  - true
+        '401':
+          description: Not authorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: 'Authentication token missing'
+          schema:
+            $ref: '#/definitions/Error'
+
+  /auth/signup:
+    post:
+      tags:
+        - Auth
+      summary: Register a new user
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/CreateUserDTO'
+      responses:
+        '201':
+          description: Successfully created
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/AuthUser'
+              message:
+                type: string
+                enum:
+                  - signup
+              success:
+                type: boolean
+                enum:
+                  - true
+        '400':
+          description: userData is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: User already exists
+          schema:
+            $ref: '#/definitions/Error'
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login a user
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/LoginUserDTO'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/AuthUser'
+              message:
+                type: string
+                enum:
+                  - login
+              success:
+                type: boolean
+                enum:
+                  - true
+
+        '400':
+          description: userData is empty
+          schema:
+            $ref: '#/definitions/Error'
+        '409':
+          description: User not found or Password is not matching
+          schema:
+            $ref: '#/definitions/Error'
+  /auth/logout:
+    post:
+      tags:
+        - Auth
+      summary: Logout a user
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                enum:
+                  - logout
+              success:
+                type: boolean
+                enum:
+                  - true
+        '401':
+          description: Not authorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: 'Authentication token missing'
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Article:
+    type: object
+    required:
+      - _id
+      - title
+      - link
+      - pubDate
+      - guid
+      - description
+      - enclosureUrl
+      - enclosureType
+      - createdAt
+      - updatedAt
+    properties:
+      _id:
+        type: string
+      title:
+        type: string
+      link:
+        type: string
+      pubDate:
+        type: string
+      guid:
+        type: string
+      description:
+        type: string
+      enclosureUrl:
+        type: string
+        x-nullable: true
+      enclosureType:
+        type: string
+        x-nullable: true
+      createdAt:
+        type: string
+      updatedAt:
+        type: string
+  ArticleDTO:
+    type: object
+    properties:
+      title:
+        type: string
+        default: 'The article'
+      link:
+        type: string
+        default: 'https://champions.football.ua/news/528186-mjuller-ce-vzhe-ne-tojj-arsenal-z-jakim-bavarija-vpevneno-spravljalasja-v-minulomu.html'
+      pubDate:
+        type: string
+        default: '2024-04-04T19:58:00.000+00:00'
+      guid:
+        type: string
+        default: 'https://champions.football.ua/news/528186.html'
+      description:
+        type: string
+        default: 'Гравець дав свій коментар.'
+      enclosureUrl:
+        type: string
+        default: https://s.ill.in.ua/i/news/136x91/528/528186.jpg
+      enclosureType:
+        type: string
+        default: 'image/jpeg'
+  AuthUser:
+    properties:
+      token:
+        type: string
+      name:
+        type: string
+      role:
+        $ref: '#/definitions/UserRole'
+  User:
+    type: object
+    required:
+      - _id
+      - email
+      - password
+      - name
+      - role
+    properties:
+      _id:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      name:
+        type: string
+      role:
+        $ref: '#/definitions/UserRole'
+      createdAt:
+        type: string
+      updatedAt:
+        type: string
+      token:
+        type: string
+        x-nullable: true
+  CreateUserDTO:
+    type: object
+    required:
+      - email
+      - password
+      - name
+      - role
+    properties:
+      email:
+        type: string
+        default: guest@gmail.com
+      password:
+        type: string
+        default: 12345678!
+      name:
+        type: string
+        default: Guest Johnny
+      role:
+        $ref: '#/definitions/UserRole'
+  LoginUserDTO:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+        default: guest@gmail.com
+      password:
+        type: string
+        default: 12345678!
+  UserRole:
+    type: string
+    enum: [ADMIN, CUSTOMER, GUEST, REDACTOR]
+    default: GUEST
+  Pagination:
+    type: object
+    properties:
+      page:
+        type: integer
+      limit:
+        type: integer
+      search:
+        type: string
+      totalCount:
+        type: integer
+      totalPages:
+        type: integer
+  AllArticlesResponse:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Article'
+      meta:
+        $ref: '#/definitions/Pagination'
+      message:
+        type: string
+        enum:
+          - allArticles
+      success:
+        type: boolean
+        enum:
+          - true
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+        enum:
+          - false
+
+securityDefinitions:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: Authorization

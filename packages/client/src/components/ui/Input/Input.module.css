@@ -1,0 +1,15 @@
+.inputContainer {
+  @apply relative flex items-start flex-col text-14/20 text-textDark font-light md:text-base transition-all duration-300 focus-within:text-accent;
+}
+
+.input {
+  @apply w-full py-1 outline-transparent text-sm leading-none font-light text-textDark border-b border-b-accent transition-all duration-300 md:py-2 md:text-[14px] focus:outline-accent focus:pl-2.5 [&:focus_+_.iconBtn]:-translate-x-2.5 focus:placeholder:text-textDark placeholder:font-normal placeholder:text-sm lg:placeholder:text-14/20 placeholder:text-grey bg-primary;
+}
+
+.iconBtn {
+  @apply block w-6 h-6 absolute right-0 bottom-[18px] translate-y-1/2 transition-all duration-300 translate-x-0;
+}
+
+.msgError {
+  @apply absolute bottom-0 left-0 transform translate-y-full text-xs text-red;
+}

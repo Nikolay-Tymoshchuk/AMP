@@ -1,0 +1,42 @@
+# baseURL
+@baseURL = https://localhost:8080
+
+###
+# Get Articles
+GET {{ baseURL }}/articles
+Content-Type: application/json
+
+###
+# Add Article
+POST {{ baseURL }}/articles
+Content-Type: application/json
+
+{
+  "title": "The article",
+  "link": "https://champions.football.ua/news/528186-mjuller-ce-vzhe-ne-tojj-arsenal-z-jakim-bavarija-vpevneno-spravljalasja-v-minulomu.html",
+  "pubDate": "2024-04-04T19:58:00.000+00:00",
+  "guid": "https://champions.football.ua/news/528186.html",
+  "description": "Гравець дав свій коментар.",
+  "enclosureUrl": "https://s.ill.in.ua/i/news/136x91/528/528186.jpg",
+  "enclosureType": "image/jpeg"
+}
+
+###
+# Get Article by ID
+GET {{ baseURL }}/articles/{id}
+Content-Type: application/json
+
+
+###
+# Change Article
+PUT {{ baseURL }}/articles/{id}
+Content-Type: application/json
+
+{
+  "title": "New article",
+}
+
+###
+# User Logout
+DELETE {{ baseURL }}/articles/{id}
+Content-Type: application/json

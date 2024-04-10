@@ -1,0 +1,108 @@
+{
+  "heroTitle": "Вітаємо в AMP",
+  "heroDescription": "Сервісі ваших улюблених новин",
+  "readMore": "Детальніше",
+  "itemsOnPage": "Показано новин",
+  "searchPlaceholder": "Пошук по заголовку",
+  "show": "Показати",
+  "listIsEmpty": "Список новин порожній",
+  "sortBy": "Сортувати за",
+  "increaseDate": "датою (спочатку старі)",
+  "decreaseDate": "датою (спочатку нові)",
+  "increaseTitle": "алфавітом А-Я",
+  "decreaseTitle": "алфавітом Я-А",
+  "errorFetchingData": "Помилка завантаження даних. Спробуйте пізніше",
+  "commonErrorAuthorization": "Помилка авторизації. Спробуйте ще раз",
+  "errorUpdateArticle": "Помилка оновлення новини. Спробуйте ще раз",
+  "errorDeleteArticle": "Помилка видалення новини. Спробуйте ще раз",
+  "wrongAuthData": "Неправильний логін або пароль",
+  "userExists": "Користувач з таким email вже існує",
+  "backToMain": "На головну",
+  "editPage": "Сторінка редагування новин",
+  "noChangesInForm": "Вхідні дані не змінювалися",
+  "editNav": "Редактор",
+  "successUpdateArticle": "Новину успішно оновлено",
+  "successDeleteArticle": "Новину було видалено",
+  "deleteArticle": "Ви впевнені, що хочете видалити новину?",
+  "deleteArticleCancel": "Скасувати",
+  "deleteArticleApprove": "Підтвердити",
+  "authFormTextData": {
+    "inputEmailText": {
+      "label": "E-mail",
+      "placeholder": "Введіть поштову адресу"
+    },
+    "regTitle": "Реєстрація",
+    "logTitle": "З поверненням",
+    "inputPasswordText": {
+      "label": "Пароль",
+      "placeholder": "Введіть пароль"
+    },
+    "confirmPassword": {
+      "label": "Підтвердіть пароль",
+      "placeholder": "Повторіть пароль"
+    },
+    "nameInput": {
+      "label": "Ім'я",
+      "placeholder": "Введіть ім'я"
+    },
+    "roles": {
+      "title": "Оберіть роль",
+      "labels": {
+        "ADMIN": "Адмін",
+        "CUSTOMER": "Користувач",
+        "REDACTOR": "Редактор",
+        "GUEST": "Гість"
+      }
+    },
+    "regNavLink": {
+      "textBeforeLink": "Вже маєте акаунт?",
+      "textLink": "Увійти"
+    },
+    "logNavLink": {
+      "textBeforeLink": "Не маєте акаунта?",
+      "textLink": "Зареєструватися"
+    },
+    "buttonSubmitText": "Продовжити",
+    "notification": {
+      "required": "Це поле обов'язкове",
+      "email": {
+        "patternMessage": "Введіть існуючий email",
+        "minLengthMessage": "Мінімальна довжина 6 символів",
+        "maxLengthMessage": "Максимальна довжина 63 символи"
+      },
+      "password": {
+        "patternMessage": "Лише латинські літери та цифри",
+        "minLengthMessage": "Мінімальна довжина 6 символів",
+        "maxLengthMessage": "Максимальна довжина 32 символи"
+      },
+      "name": {
+        "minLengthMessage": "Мінімальна довжина 2 символів",
+        "maxLengthMessage": "Максимальна довжина 32 символи"
+      },
+      "confirmPasswordMessage": "Паролі не співпадають"
+    }
+  },
+  "articleFromTextData": {
+    "editArticle": "Редагування новини",
+    "title": {
+      "label": "Заголовок",
+      "placeholder": "Введіть заголовок"
+    },
+    "description": {
+      "label": "Опис",
+      "placeholder": "Додайте опис"
+    },
+    "enclosureUrl": {
+      "label": "URL зображення",
+      "placeholder": "Введіть новий URL"
+    },
+    "pubDate": "Змінити дату публікації на поточну",
+    "buttonSubmitText": "Зберегти",
+    "notification": {
+      "required": "Це поле обов'язкове",
+      "minLength": "Мінімальна довжина 10 символів",
+      "maxLength": "Максимальна довжина 300 символів",
+      "notValidUrl": "Введіть правильний URL"
+    }
+  }
+}

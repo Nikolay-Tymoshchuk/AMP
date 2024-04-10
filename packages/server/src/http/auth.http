@@ -1,0 +1,34 @@
+# baseURL
+@baseURL = https://localhost:8080
+
+###
+# Get User Info
+GET {{ baseURL }}/auth
+Content-Type: application/json
+
+###
+# User Signup
+POST {{ baseURL }}/auth/signup
+Content-Type: application/json
+
+{
+    "email": "example@email.com",
+    "password": "password",
+    "name": "John",
+    "role": "ADMIN"
+}
+
+###
+# User Login
+POST {{ baseURL }}/auth/login
+Content-Type: application/json
+
+{
+    "email": "example@email.com",
+    "password": "password"
+}
+
+###
+# User Logout
+POST {{ baseURL }}/auth/logout
+Content-Type: application/json

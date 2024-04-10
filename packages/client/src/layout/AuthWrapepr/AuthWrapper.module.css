@@ -1,0 +1,11 @@
+.authContainer {
+  @apply flex items-center justify-center flex-col h-screen w-full mx-auto px-3 py-5 overflow-y-auto sm:w-[480px] md:w-[768px] lg:w-1/2 md:px-8 lg:px-0 lg:py-0;
+}
+
+.main {
+  @apply lg:flex;
+}
+
+.decor {
+  @apply lg:bg-auth lg:block hidden w-1/2 h-screen bg-no-repeat bg-cover;
+}

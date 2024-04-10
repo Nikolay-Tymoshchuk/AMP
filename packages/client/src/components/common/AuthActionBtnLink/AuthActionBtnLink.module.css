@@ -1,0 +1,7 @@
+.auth {
+  @apply inline-flex rounded-full w-fit aspect-square bg-transparent border border-accentLight p-1.5 text-accentLight hover:text-white focus:text-white hover:bg-accentLight focus:bg-accentLight active:bg-accent transition-all duration-300 ease-in-out md:p-2;
+}
+
+.icon {
+  @apply w-3 h-auto md:w-5;
+}

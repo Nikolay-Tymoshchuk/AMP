@@ -1,0 +1,54 @@
+.headingBox {
+  @apply absolute left-8 md:top-1/2 md:-translate-y-1/2 flex flex-col md:gap-y-8 bottom-0 gap-y-4 -translate-y-1/2;
+}
+
+.typewriter {
+  @apply text-6xl font-bold overflow-hidden whitespace-nowrap my-0 inline-block;
+  border-right: 0.12em solid transparent;
+  font-size: clamp(18px, 4vw, 60px);
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret 0.5s step-end 8;
+}
+
+.description {
+  transform-origin: left;
+  font-size: clamp(10px, 3vw, 24px);
+}
+
+@media screen and (min-width: 768px) {
+  .typewriter {
+    font-size: clamp(18px, 4vw, 40px);
+  }
+  .description {
+    font-size: clamp(10px, 2vw, 20px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .typewriter {
+    font-size: 72px;
+  }
+  .description {
+    font-size: 32px;
+  }
+}
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}

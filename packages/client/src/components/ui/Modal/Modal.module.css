@@ -1,0 +1,24 @@
+.backdrop {
+  @apply fixed inset-0 z-[100] bg-lightAlpha;
+  backdrop-filter: blur(5px);
+  animation: show-modal 400ms forwards;
+}
+
+.modal {
+  @apply rounded max-h-[90vh] min-w-[280px] overflow-auto absolute top-1/2 left-1/2 p-7 md:p-12 bg-white;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modalIconCloseWrapper {
+  position: absolute;
+  @apply top-3 right-3 md:top-5 md:right-5 transition-colors duration-200 hover:text-accent focus:text-accent;
+}
+
+@keyframes show-modal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,37 @@
+import { TIcon } from '~/types/components.types';
+
+import SvgLogo from '~/public/svg/Logo_100-40.svg';
+import SvgHero from '~/public/svg/hero_200-200.svg';
+import ArrowRight from '~/public/svg/arrows_thin-right_12-12.svg';
+import ArrowLeft from '~/public/svg/arrows_thin-left_12-12.svg';
+import Close from '~/public/svg/Close_10-10.svg';
+import Scope from '~/public/svg/Scope_12-12.svg';
+import CheckMark from '~/public/svg/CheckMark_11-8.svg';
+import ArrowInsert from '~/public/svg/Arrow_insert_33-32.svg';
+import ArrowCasualLeft from '~/public/svg/Arrow_left-casual_12-10.svg';
+import EyeClosed from '~/public/svg/Eye_closed_24-24.svg';
+import EyeOpened from '~/public/svg/Eye_opened_24-24.svg';
+import Login from '~/public/svg/Login_20-20.svg';
+import RadioChecked from '~/public/svg/Radio-btn_checked_24-24.svg';
+import RadioUnchecked from '~/public/svg/Radio-btn_disabled_24-24.svg';
+import ArrowSmallDown from '~/public/svg/Arrow_small-down_10-10.svg';
+import Edit from '~/public/svg/Edit_11-12.svg';
+import Delete from '~/public/svg/Delete_10-12.svg';
+
+export const SVG_LOGO_100_40 = SvgLogo as TIcon;
+export const SVG_HERO_200_200 = SvgHero as TIcon;
+export const SVG_ARROW_RIGHT_12_12 = ArrowRight as TIcon;
+export const SVG_ARROW_LEFT_12_12 = ArrowLeft as TIcon;
+export const SVG_CLOSE_10_10 = Close as TIcon;
+export const SVG_SCOPE_12_12 = Scope as TIcon;
+export const SVG_CHECK_MARK_11_8 = CheckMark as TIcon;
+export const SVG_ARROW_INSERT_33_32 = ArrowInsert as TIcon;
+export const SVG_ARROW_CASUAL_LEFT_12_10 = ArrowCasualLeft as TIcon;
+export const SVG_EYE_CLOSED_24_24 = EyeClosed as TIcon;
+export const SVG_EYE_OPENED_24_24 = EyeOpened as TIcon;
+export const SVG_LOGIN_20_20 = Login as TIcon;
+export const SVG_RADIO_CHECKED_24_24 = RadioChecked as TIcon;
+export const SVG_RADIO_UNCHECKED_24_24 = RadioUnchecked as TIcon;
+export const SVG_ARROW_SMALL_DOWN_10_10 = ArrowSmallDown as TIcon;
+export const SVG_EDIT_11_12 = Edit as TIcon;
+export const SVG_DELETE_10_12 = Delete as TIcon;

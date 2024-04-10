@@ -1,0 +1,54 @@
+.text {
+  display: flex;
+  align-items: center;
+}
+
+.arrowSvg {
+  margin-right: 7px;
+}
+.textColorBlue {
+  color: var(--accent-cl);
+  /* @include transitioned(color); */
+}
+.textColorBlue:hover {
+  color: var(--hover-cl);
+}
+
+.textColorBlack {
+  color: var(--secondary-txt-cl);
+  /* @include transitioned(color); */
+}
+.textColorBlack:hover {
+  color: var(--hover-cl);
+}
+
+.textSizeXS {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.textSizeSM {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.textFontRegular {
+  font-weight: 300;
+}
+.textFontSemiBold {
+  font-weight: 600;
+}
+.textLinkFontRegular {
+  font-weight: 400;
+}
+.textLinkFontSemiBold {
+  font-weight: 600;
+}
+
+.textLinkUnderline {
+  text-decoration: underline;
+}
+
+.indentText {
+  margin-left: 4px;
+}

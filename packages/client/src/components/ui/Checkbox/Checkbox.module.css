@@ -1,0 +1,39 @@
+.checkboxLabel {
+  @apply relative flex gap-3 text-sm leading-[1.3];
+}
+
+.checkboxLabel.checkboxPositionSignIn {
+  @apply text-accentGrey;
+}
+
+.checkbox:focus + .checkboxWrapper {
+  @apply outline outline-1 outline-accent;
+}
+
+.checkbox:checked + .checkboxWrapper {
+  @apply border-accent;
+}
+
+.checkboxPositionSignUp {
+  @apply mt-2;
+}
+
+.checkboxPositionSignIn {
+  @apply items-center;
+}
+
+.checkboxWrapper {
+  @apply relative min-w-[20px] h-[20px] rounded-[4px] border border-accentGrey flex justify-center items-center cursor-pointer;
+}
+
+.checkboxWrapperError {
+  @apply border-red;
+}
+
+.textWrapper {
+  @apply relative;
+}
+
+.msgError {
+  @apply absolute bottom-0 left-[-32px] -translate-y-full text-[12px] text-red;
+}

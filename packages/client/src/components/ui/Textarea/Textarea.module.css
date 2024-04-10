@@ -1,0 +1,11 @@
+.inputContainer {
+  @apply relative flex flex-col gap-2 transition-all duration-300 font-semibold text-18/28 lg:gap-4 lg:text-[20px] focus-within:text-accent;
+}
+
+.input {
+  @apply w-full p-3 text-sm text-textDark border border-accent rounded-sm focus:outline-none transition-all duration-300 md:text-xs focus:text-accent focus:placeholder:text-textDark placeholder:text-grey;
+}
+
+.msgError {
+  @apply absolute bottom-0 transform translate-y-full text-red text-xs;
+}

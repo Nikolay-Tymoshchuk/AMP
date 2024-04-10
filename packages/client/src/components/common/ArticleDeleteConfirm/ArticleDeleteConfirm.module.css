@@ -1,0 +1,34 @@
+.googleInfoText {
+  @include font(16px, 400, 1.5);
+}
+
+.googleInfoTitle {
+  @include font(20px, 700, 1.4);
+  margin-top: 30px;
+  text-align: center;
+}
+
+.googleInfoBtnsWrapper {
+  @include flex(center, center, column);
+
+  gap: 16px;
+  margin-top: 30px;
+  @include mq(tablet) {
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 40px;
+  }
+}
+
+.googleInfoBtnBack {
+  width: 186px;
+  height: 48px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.googleInfoBtnExit {
+  width: 186px;
+  height: 48px;
+  border-radius: 2px;
+}
