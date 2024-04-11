@@ -1,8 +1,10 @@
 'use client';
+import { useGetArticles } from '@/lib/hooks/useArticles';
+
 import { ArticlesList } from '@/components/common/ArticlesList';
 import { Spinner } from '@/components/ui/Spinner';
 import { PrimaryLayout } from '@/layout/PrimaryLayout';
-import { useGetArticles } from '@/lib/hooks/useArticles';
+
 import data from '@/data/data.json';
 
 const { errorFetchingData } = data;

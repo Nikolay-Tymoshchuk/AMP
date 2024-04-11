@@ -1,4 +1,3 @@
-// import { LoginForm } from '@/components/forms/LoginForm';
 import { AuthForm } from '@/components/forms/AuthForm';
 import { TYPE_AUTH } from '@/interfaces/enums';
 

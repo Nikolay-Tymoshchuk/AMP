@@ -6,7 +6,7 @@ import { TInnerLink } from '~/types/components.types';
 
 export const IconLink: FC<TInnerLink> = ({ children, className, ...props }) => {
   return (
-    <Link {...props} className={cn('', className)}>
+    <Link {...props} className={cn(className)}>
       {children}
     </Link>
   );

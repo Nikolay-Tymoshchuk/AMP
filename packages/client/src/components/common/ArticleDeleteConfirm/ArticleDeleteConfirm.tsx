@@ -6,9 +6,8 @@ import { useDeleteArticle } from '@/lib/hooks/useArticles';
 import { Button } from '@/components/ui/CommonsButtons/Button';
 import { Title } from '@/components/ui/Title';
 
-import data from '@/data/data.json';
 import { TVoidFunction } from '~/types/components.types';
-import s from './ArticleDeleteConfirm.module.css';
+import data from '@/data/data.json';
 
 const {
   deleteArticleApprove,
@@ -42,7 +41,7 @@ export const ArticleDeleteConfirm: FC<IGoogleInfoModalProps> = ({
 
   return (
     <div className="flex flex-col gap-10">
-      <Title Tag="h2" className={s.googleInfoTitle}>
+      <Title Tag="h2" className="mt-8 text-center">
         {deleteArticle}
       </Title>
 

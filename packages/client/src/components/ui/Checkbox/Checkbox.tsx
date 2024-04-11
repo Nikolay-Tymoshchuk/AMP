@@ -5,7 +5,6 @@ import cn from 'classnames';
 import { SVG_CHECK_MARK_11_8 } from '@/components/ui/Icons';
 
 import s from './Checkbox.module.css';
-import { TYPE_AUTH } from '@/interfaces/enums';
 
 export interface ICheckboxProps {
   labelText: string;

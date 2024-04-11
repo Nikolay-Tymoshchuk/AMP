@@ -9,15 +9,11 @@ import { ItemsOnPageInfo } from '@/components/common/ItemsOnPageInfo';
 import { PerPageSelect } from '@/components/common/PerPageSelect';
 import { SortBySelect } from '@/components/common/SortBySelect';
 import { Pagination } from '@/components/ui/Pagination';
-import { Spinner } from '@/components/ui/Spinner';
 import { Title } from '@/components/ui/Title';
 
 import { IArticle } from '@/interfaces/article.interfaces';
 import { IPrimaryLayoutClient } from '@/interfaces/components.interfaces';
 import { SORT_BY } from '@/interfaces/enums';
-import data from '@/data/data.json';
-
-const { errorFetchingData } = data;
 
 export const PrimaryLayoutClient = ({
   children,

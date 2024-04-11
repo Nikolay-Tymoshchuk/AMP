@@ -79,18 +79,6 @@ const useLogout = () => {
     return response.data;
   };
 
-  // return useMutation(logout, {
-  //   onSuccess: ({ success }) => {
-  //     queryClient.invalidateQueries(AUTH);
-
-  //     if (!success) return;
-
-  //     signOut({
-  //       callbackUrl: ROUTES.LOGIN,
-  //       redirect: true,
-  //     });
-  //   },
-  // });
   return useMutation({
     mutationFn: logout,
     onSuccess: ({ success }) => {
