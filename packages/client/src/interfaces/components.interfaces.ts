@@ -6,9 +6,12 @@ export interface IParent {
   children: ReactNode;
 }
 
-export interface IPrimaryLayout extends IParent {
-  withHero?: boolean;
+export interface IPrimaryLayoutClient extends IParent {
   title?: string;
+}
+
+export interface IPrimaryLayout extends IPrimaryLayoutClient {
+  withHero?: boolean;
 }
 
 export interface ItemsOnPageSelectProps {

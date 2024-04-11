@@ -1,15 +1,21 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
-import { useQuery, useMutation, useQueryClient } from 'react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
-import {
-  deleteArticle,
-  // getArticleById,
-  getArticles,
-  updateArticle,
-} from '@/lib/features/articlesApi';
+// import {
+//   deleteArticle,
+//   // getArticleById,
+//   getArticles,
+//   updateArticle,
+// } from '@/lib/features/articlesApi';
+import { useAxiosAuth } from './useAxiosAuth';
 
 import { KEYS } from '@/interfaces/enums';
+import {
+  ArticleDTO,
+  IAllArticlesResponse,
+  ISingleArticleResponse,
+} from '@/interfaces/article.interfaces';
 
 const { ARTICLES } = KEYS;
 
@@ -17,31 +23,63 @@ const useGetArticles = () => {
   const params = useSearchParams();
   const searchParams = params ? params.toString() : null;
 
-  return useQuery([ARTICLES, searchParams], () => getArticles(searchParams), {
-    keepPreviousData: false,
-    retry: 2,
-    retryDelay: 2000,
-    refetchOnWindowFocus: false,
+  const baseApi = useAxiosAuth();
+
+  const getArticles = async (
+    params: string | null,
+  ): Promise<IAllArticlesResponse> => {
+    const url = params ? `${ARTICLES}?${params}` : ARTICLES;
+    const response = await baseApi.get(url);
+    return response.data;
+  };
+
+  console.log('getArticles', getArticles(searchParams));
+
+  return useQuery({
+    queryKey: [ARTICLES, searchParams],
+    queryFn: () => getArticles(searchParams),
   });
+  // {
+  //     keepPreviousData: false,
+  //     retry: 2,
+  //     retryDelay: 2000,
+  //     refetchOnWindowFocus: false,
+  //   },
 };
 
 const useUpdateArticle = () => {
   const queryClient = useQueryClient();
+  const baseApi = useAxiosAuth();
 
-  return useMutation(updateArticle, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(ARTICLES);
-    },
+  const updateArticle = async (data: {
+    id: string;
+    articleData: ArticleDTO;
+  }): Promise<ISingleArticleResponse> => {
+    const { id, articleData } = data;
+    const url = `${ARTICLES}/${id}`;
+    const response = await baseApi.put(url, articleData);
+    return response.data;
+  };
+
+  return useMutation({
+    mutationFn: updateArticle,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: [ARTICLES] }),
   });
 };
 
 const useDeleteArticle = () => {
   const queryClient = useQueryClient();
+  const baseApi = useAxiosAuth();
 
-  return useMutation(deleteArticle, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(ARTICLES);
-    },
+  const deleteArticle = async (id: string): Promise<ISingleArticleResponse> => {
+    const url = `${ARTICLES}/${id}`;
+    const response = await baseApi.delete(url);
+    return response.data;
+  };
+
+  return useMutation({
+    mutationFn: deleteArticle,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: [ARTICLES] }),
   });
 };
 
