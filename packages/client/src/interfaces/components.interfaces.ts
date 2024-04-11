@@ -8,11 +8,19 @@ export interface IParent {
 
 export interface IPrimaryLayout extends IParent {
   withHero?: boolean;
+  title?: string;
 }
 
 export interface ItemsOnPageSelectProps {
   perPage: number;
   onPerPageClick: Dispatch<SetStateAction<number>>;
+}
+
+export interface IPaginationProps {
+  current: number;
+  lastPage: number;
+  maxLength: number;
+  setPage: Dispatch<SetStateAction<number>>;
 }
 
 export interface ISortBySelectProps {

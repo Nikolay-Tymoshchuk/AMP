@@ -1,7 +1,6 @@
 'use client';
 import { memo } from 'react';
 
-import { useSearchQueryHook } from '@/hooks';
 import { getPaginationItems } from '@/utils/getPaginationItems';
 import {
   SVG_ARROW_LEFT_12_12,
@@ -11,29 +10,18 @@ import {
 import { PaginationBtn } from './PaginationBtn';
 
 import s from './Pagination.module.css';
+import { IPaginationProps } from '@/interfaces/components.interfaces';
 
-type PaginationProps = {
-  // currentPage: number;
-  lastPage: number;
-  maxLength: number;
-  // setCurrentPage: Dispatch<SetStateAction<number>>;
-};
-export const Pagination = memo((props: PaginationProps) => {
-  const { lastPage, maxLength } = props;
+export const Pagination = memo((props: IPaginationProps) => {
+  const { lastPage, maxLength, current, setPage } = props;
 
-  const { currentPage, handlePaginationItemClick } = useSearchQueryHook();
-
-  // useEffect(() => {
-  //   handlePaginationItemClick();
-  // }, [currentPage]);
-
-  const pageNums = getPaginationItems(currentPage, lastPage, maxLength);
+  const pageNums = getPaginationItems(current, lastPage, maxLength);
 
   return (
     <nav className={s.paginationContainer} aria-label="Pagination">
       <PaginationBtn
-        disabled={currentPage === 1}
-        onClick={() => handlePaginationItemClick(currentPage - 1)}
+        disabled={current === 1}
+        onClick={() => setPage(current - 1)}
         className={s.optionBtn}
       >
         <SVG_ARROW_LEFT_12_12 width={12} height={12} />
@@ -42,17 +30,17 @@ export const Pagination = memo((props: PaginationProps) => {
         {pageNums.map((pageNum, idx) => (
           <PaginationBtn
             key={idx}
-            active={currentPage === pageNum}
+            active={current === pageNum}
             disabled={isNaN(pageNum)}
-            onClick={() => handlePaginationItemClick(pageNum)}
+            onClick={() => setPage(pageNum)}
           >
             {!isNaN(pageNum) ? pageNum : '...'}
           </PaginationBtn>
         ))}
       </div>
       <PaginationBtn
-        disabled={currentPage === lastPage}
-        onClick={() => handlePaginationItemClick(currentPage + 1)}
+        disabled={current === lastPage}
+        onClick={() => setPage(current + 1)}
         className={s.optionBtn}
       >
         <SVG_ARROW_RIGHT_12_12 width={12} height={12} />

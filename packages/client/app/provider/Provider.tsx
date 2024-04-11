@@ -3,9 +3,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { SessionProvider } from 'next-auth/react';
 import { AuthProvider } from '@/layout/AuthProvider';
 
-const queryClient = new QueryClient();
-
 export default function Provider({ children }: { children: React.ReactNode }) {
+  const queryClient = new QueryClient();
   return (
     <SessionProvider>
       <AuthProvider>

@@ -1,3 +1,4 @@
+'use client';
 import { USER_ROLE } from '@/interfaces/enums';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
