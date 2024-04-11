@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import cn from 'classnames';
 import Image from 'next/image';
 
-import { useArticles } from '@/lib/hooks/useArticles';
+import { useUpdateArticle } from '@/lib/hooks/useArticles';
 import { articleSchema } from '@/schemas/articleSchema';
 
 import { TEditArticleForm, TVoidFunction } from '~/types/components.types';
@@ -38,7 +38,6 @@ export const EditArticleForm = ({
   article: IArticle;
   closeModal: TVoidFunction;
 }) => {
-  const { useUpdateArticle } = useArticles();
   const { mutateAsync, isLoading } = useUpdateArticle();
 
   const { _id, description, enclosureUrl, title } = article;

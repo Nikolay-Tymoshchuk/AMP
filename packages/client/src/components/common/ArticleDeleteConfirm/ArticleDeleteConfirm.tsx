@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { toast } from 'react-toastify';
 
-import { useArticles } from '@/lib/hooks/useArticles';
+import { useDeleteArticle } from '@/lib/hooks/useArticles';
 
 import { Button } from '@/components/ui/CommonsButtons/Button';
 import { Title } from '@/components/ui/Title';
@@ -27,7 +27,6 @@ export const ArticleDeleteConfirm: FC<IGoogleInfoModalProps> = ({
   articleId,
   closeModal,
 }) => {
-  const { useDeleteArticle } = useArticles();
   const { mutateAsync } = useDeleteArticle();
 
   const handleDeleteArticle = async () => {

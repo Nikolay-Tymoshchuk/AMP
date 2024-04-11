@@ -1,14 +1,16 @@
+# Article Server
+
 ## ⚒ How to Install
 
 To run project run
 
 ```bash
 
-$  npm  install
+$  npm run dev
 
 or
 
-$  yarn  install
+$  npm run dev
 
 ```
 

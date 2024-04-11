@@ -2,7 +2,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  transpileModules: ['@server', '@root'],
   webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,

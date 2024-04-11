@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "amp_client",
   "version": "0.1.0",
   "private": true,
   "description": "Client side of the application",

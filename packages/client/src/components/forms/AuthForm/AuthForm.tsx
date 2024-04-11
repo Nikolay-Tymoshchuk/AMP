@@ -6,7 +6,7 @@ import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-import { useAuth } from '@/lib/hooks/useAuth';
+import { useSignup, useLogin } from '@/lib/hooks/useAuth';
 import { loginSchema, registerSchema } from '@/schemas/authSchema';
 
 import { Button } from '@/components/ui/CommonsButtons/Button';
@@ -49,7 +49,6 @@ const { LOGIN, SIGNUP } = ROUTES;
 
 export const AuthForm: FC<IFormAuthProps> = ({ typeAuth }) => {
   const isLoginType = typeAuth === TYPE_AUTH.LOGIN;
-  const { useLogin, useSignup } = useAuth();
   const { mutateAsync: login, isLoading: isLoadingLogin } = useLogin();
   const { mutateAsync: signup, isLoading: isLoadingSignup } = useSignup();
 

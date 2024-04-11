@@ -4611,7 +4611,7 @@ client-only@0.0.1:
     react-query "^3.39.3"
     react-redux "^9.1.0"
     react-toastify "^10.0.5"
-    server "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-client-0.1.0-b0fa84fa-25d6-4f25-84e7-720113960ff7-1712796826845/node_modules/server"
+    server "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-client-0.1.0-ea7b1b5f-6d89-449c-8ae6-4e17a9774ef2-1712820587889/node_modules/server"
     tailwind-scrollbar "^3.1.0"
     tailwindcss "^3.3.0"
 
@@ -10734,7 +10734,7 @@ serve-static@1.15.0:
     bcrypt "^5.0.1"
     class-transformer "^0.5.1"
     class-validator "^0.14.1"
-    client "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-server-0.1.0-7f21bb7c-94ae-4cd7-b67f-c22bd83fa5b5-1712796826844/node_modules/client"
+    client "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-server-0.1.0-537e3bf8-486b-4687-9d8c-b64b657c88b9-1712820587888/node_modules/client"
     compression "^1.7.4"
     cookie-parser "^1.4.6"
     cors "^2.8.5"
@@ -11323,9 +11323,9 @@ swagger-parser@^10.0.3:
     "@apidevtools/swagger-parser" "10.0.3"
 
 swagger-ui-dist@>=4.11.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.15.0.tgz#b67856839d4cb8a31d7b0dc8792a9ee3d1123042"
-  integrity sha512-1zd4cNaUayXCWFSdBGNB+CYGISbe7M4FSgPqOjrgqKi1oEZfXzrOrjIHa0jHf5uSDN0X/mXmhFgKR9Jrr+fvqQ==
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.15.1.tgz#99fbb54c01feb6635e218fa12061f0edae634a00"
+  integrity sha512-Et/WY0NFdKj8sUBOyEx5P3VybsvGl7bo/y9JvgQ22TkH1a/KscQ0ZiQST2YeJ3cwCrIjYTbHbt165fkku0y1Ig==
 
 swagger-ui-express@^4.5.0:
   version "4.6.3"

@@ -6,6 +6,7 @@ import { IParent } from '@/interfaces/components.interfaces';
 import { useAuthHook } from '@/hooks';
 
 export const AuthProvider = ({ children }: IParent) => {
+  console.log('AuthProvider');
   const { token } = useAuthHook();
 
   useEffect(() => {

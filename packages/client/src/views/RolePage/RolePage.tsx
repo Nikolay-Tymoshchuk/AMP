@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 
 import { useAuthHook, useSearchQueryHook } from '@/hooks';
-import { useArticles } from '@/lib/hooks/useArticles';
+import { useGetArticles } from '@/lib/hooks/useArticles';
 
 import {
   ArticlesTable,
@@ -18,7 +18,6 @@ import { Pagination } from '@/components/ui/Pagination';
 import { Spinner } from '@/components/ui/Spinner';
 import { Title } from '@/components/ui/Title';
 import { PrimaryLayout } from '@/layout/PrimaryLayout';
-import { DESCRIPTION, NEXTAPI_URL, NEXTAUTH_URL, TITLE } from '@/config';
 
 import data from '@/data/data.json';
 import { IArticle } from '@/interfaces/article.interfaces';
@@ -28,7 +27,6 @@ import { ArticleDeleteConfirm } from '@/components/common/ArticleDeleteConfirm';
 const { errorFetchingData, editPage } = data;
 
 export const RolePage = () => {
-  const { useGetArticles } = useArticles();
   const { data: articlesResponse, isLoading, isError } = useGetArticles();
   const { setPerPage, perPage, inputValue, setInputValue, sortBy, setSortBy } =
     useSearchQueryHook();

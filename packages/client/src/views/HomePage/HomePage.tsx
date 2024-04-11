@@ -1,7 +1,7 @@
 'use client';
 import { useMemo } from 'react';
 
-import { useArticles } from '@/lib/hooks/useArticles';
+import { useGetArticles } from '@/lib/hooks/useArticles';
 import { useSearchQueryHook } from '@/hooks';
 
 import { ArticlesList } from '@/components/common/ArticlesList';
@@ -18,7 +18,6 @@ import { IArticle } from '@/interfaces/article.interfaces';
 const { listIsEmpty, errorFetchingData } = data;
 
 export const HomePage = () => {
-  const { useGetArticles } = useArticles();
   const { data: articlesResponse, isLoading, isError } = useGetArticles();
   const { setPerPage, perPage, inputValue, setInputValue, sortBy, setSortBy } =
     useSearchQueryHook();

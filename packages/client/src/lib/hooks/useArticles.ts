@@ -13,37 +13,36 @@ import { KEYS } from '@/interfaces/enums';
 
 const { ARTICLES } = KEYS;
 
-export const useArticles = () => {
-  const queryClient = useQueryClient();
+const useGetArticles = () => {
   const params = useSearchParams();
-
   const searchParams = params ? params.toString() : null;
 
-  return {
-    useGetArticles: () =>
-      useQuery([ARTICLES, searchParams], () => getArticles(searchParams), {
-        keepPreviousData: false,
-        retry: 2,
-        retryDelay: 2000,
-        refetchOnWindowFocus: false,
-      }),
-
-    // LABEL: currently unnecessary
-    // useGetArticleById: (id: string) =>
-    //   useQuery([ARTICLES, id], () => getArticleById(id)),
-
-    useUpdateArticle: () =>
-      useMutation(updateArticle, {
-        onSuccess: () => {
-          queryClient.invalidateQueries(ARTICLES);
-        },
-      }),
-
-    useDeleteArticle: () =>
-      useMutation(deleteArticle, {
-        onSuccess: () => {
-          queryClient.invalidateQueries(ARTICLES);
-        },
-      }),
-  };
+  return useQuery([ARTICLES, searchParams], () => getArticles(searchParams), {
+    keepPreviousData: false,
+    retry: 2,
+    retryDelay: 2000,
+    refetchOnWindowFocus: false,
+  });
 };
+
+const useUpdateArticle = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(updateArticle, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(ARTICLES);
+    },
+  });
+};
+
+const useDeleteArticle = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(deleteArticle, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(ARTICLES);
+    },
+  });
+};
+
+export { useGetArticles, useUpdateArticle, useDeleteArticle };
