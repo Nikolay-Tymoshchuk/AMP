@@ -5,7 +5,7 @@
 }
 
 .modal {
-  @apply rounded max-h-[90vh] min-w-[280px] overflow-auto absolute top-1/2 left-1/2 p-7 md:p-12 bg-white;
+  @apply rounded max-h-[90vh] min-w-[330px] overflow-auto absolute top-1/2 left-1/2 p-7 md:p-12 bg-white;
   transform: translate(-50%, -50%) scale(1);
 }
 

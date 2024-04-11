@@ -1,3 +1,3 @@
 .btn {
-  @apply items-center justify-center w-[180px] rounded-sm flex gap-x-5 p-3 text-lg text-textDark border-none bg-accentLight hover:bg-accent focus:bg-accent disabled:bg-grey hover:text-white transition-all duration-200;
+  @apply items-center justify-center rounded-sm flex gap-x-5 p-3 text-lg text-textDark border-none bg-accentLight hover:bg-accent focus:bg-accent disabled:bg-grey hover:text-white transition-all duration-200;
 }
