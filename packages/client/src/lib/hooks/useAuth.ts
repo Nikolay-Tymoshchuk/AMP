@@ -1,8 +1,7 @@
 'use client';
 
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import { login, logout, signup } from '@/lib/features/authApi';
 import { useAxiosAuth } from './useAxiosAuth';
 
 import { KEYS } from '@/interfaces/enums';
@@ -28,9 +27,10 @@ const useLogin = () => {
     return response.data;
   };
 
-  return useMutation(login, {
+  return useMutation({
+    mutationFn: login,
     onSuccess: ({ data: { token, name, role }, success }) => {
-      queryClient.invalidateQueries(AUTH);
+      queryClient.invalidateQueries({ queryKey: [AUTH] });
 
       if (!success) return;
 
@@ -53,9 +53,11 @@ const useSignup = () => {
     return response.data;
   };
 
-  return useMutation(signup, {
+  return useMutation({
+    mutationFn: signup,
     onSuccess: ({ data: { token, name, role }, success }) => {
-      queryClient.invalidateQueries(AUTH);
+      queryClient.invalidateQueries({ queryKey: [AUTH] });
+
       if (!success) return;
 
       signIn('credentials', {
@@ -77,16 +79,26 @@ const useLogout = () => {
     return response.data;
   };
 
-  return useMutation(logout, {
+  // return useMutation(logout, {
+  //   onSuccess: ({ success }) => {
+  //     queryClient.invalidateQueries(AUTH);
+
+  //     if (!success) return;
+
+  //     signOut({
+  //       callbackUrl: ROUTES.LOGIN,
+  //       redirect: true,
+  //     });
+  //   },
+  // });
+  return useMutation({
+    mutationFn: logout,
     onSuccess: ({ success }) => {
-      queryClient.invalidateQueries(AUTH);
+      queryClient.invalidateQueries({ queryKey: [AUTH] });
 
       if (!success) return;
 
-      signOut({
-        callbackUrl: ROUTES.LOGIN,
-        redirect: true,
-      });
+      signOut({ callbackUrl: ROUTES.LOGIN, redirect: true });
     },
   });
 };

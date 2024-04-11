@@ -77,40 +77,23 @@ export const PrimaryLayoutClient = ({
 
   return (
     <>
-      {isError ? (
-        <Title>{errorFetchingData}</Title>
-      ) : (
-        <>
-          {title && <Title>{title}</Title>}
-          <div className="lg:flex lg:justify-between lg:items-center items-end grid grid-cols-2 grid-rows-2 gap-2 py-4 px-1 md:px-4 bg-blue-100">
-            <PerPageSelect
-              perPage={perPage}
-              onPerPageClick={handlePerPageClick}
-            />
-            <SortBySelect sortBy={sortBy} setSortBy={handleSortBy} />
-            <InputSearchWithBox value={inputValue} setValue={handleSearch} />
-            <ItemsOnPageInfo
-              length={articleData?.list?.length}
-              total={articleData.totalCount}
-            />
-          </div>
-          {isLoading ? (
-            <div>
-              <Spinner />
-            </div>
-          ) : (
-            <>
-              {children}
-              <Pagination
-                lastPage={totalPages}
-                maxLength={7}
-                current={currentPage}
-                setPage={handlePaginationItemClick}
-              />
-            </>
-          )}
-        </>
-      )}
+      {title && <Title>{title}</Title>}
+      <div className="lg:flex lg:justify-between lg:items-center items-end grid grid-cols-2 grid-rows-2 gap-2 py-4 px-1 md:px-4 bg-blue-100">
+        <PerPageSelect perPage={perPage} onPerPageClick={handlePerPageClick} />
+        <SortBySelect sortBy={sortBy} setSortBy={handleSortBy} />
+        <InputSearchWithBox value={inputValue} setValue={handleSearch} />
+        <ItemsOnPageInfo
+          length={articleData?.list?.length}
+          total={articleData.totalCount}
+        />
+      </div>
+      {children}
+      <Pagination
+        lastPage={totalPages}
+        maxLength={7}
+        current={currentPage}
+        setPage={handlePaginationItemClick}
+      />
     </>
   );
 };

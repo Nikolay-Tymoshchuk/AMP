@@ -52,7 +52,7 @@ class RssParserService {
   }
 
   private initializeScheduledParsing() {
-    cron.schedule('* * * * *', () => {
+    cron.schedule('0 * * * *', () => {
       this.parseRSSFeed(this.url);
     });
   }

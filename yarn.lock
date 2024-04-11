@@ -4624,7 +4624,7 @@ client-only@0.0.1:
     react-query "^3.39.3"
     react-redux "^9.1.0"
     react-toastify "^10.0.5"
-    server "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-client-0.1.0-8f94869a-e91b-4b55-97ac-db44df213b58-1712842857070/node_modules/server"
+    server "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-client-0.1.0-1b2d583a-9178-487f-9d2e-6ed0688a24da-1712846652360/node_modules/server"
     tailwind-scrollbar "^3.1.0"
     tailwindcss "^3.3.0"
 
@@ -10747,7 +10747,7 @@ serve-static@1.15.0:
     bcrypt "^5.0.1"
     class-transformer "^0.5.1"
     class-validator "^0.14.1"
-    client "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-server-0.1.0-a9dd6347-1e45-419a-aa9b-bace9e365da7-1712842857069/node_modules/client"
+    client "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-server-0.1.0-dc15561e-e434-43f8-bf9d-a4c9f0f48402-1712846652357/node_modules/client"
     compression "^1.7.4"
     cookie-parser "^1.4.6"
     cors "^2.8.5"

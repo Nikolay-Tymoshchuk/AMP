@@ -7,7 +7,7 @@ const Table = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     className={cn(
-      'w-full overflow-auto overflow-x-auto overflow-y-visible max-h-[calc(100vh_-_350px)] scrollbar scrollbar-track-[#181D23] scrollbar-thumb-accentLight scrollbar-track-rounded-full scrollbar-thumb-rounded-full  scrollbar-w-[3px] scrollbar-h-[3px]',
+      'w-full overflow-auto overflow-x-auto overflow-y-visible max-h-[calc(100vh_-_380px)] scrollbar scrollbar-track-[#181D23] scrollbar-thumb-accentLight scrollbar-track-rounded-full scrollbar-thumb-rounded-full  scrollbar-w-[3px] scrollbar-h-[3px]',
       className,
     )}
   >
