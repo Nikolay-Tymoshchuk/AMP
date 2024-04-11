@@ -4,7 +4,7 @@ AMP is a monorepo project that includes a client-side application built with Nex
 
 ## 🚀 Running the Project
 
-Before running the project, make sure you have Node.js and Yarn installed on your machine and config `.env.local` by exapmle from `.env.example`
+Before running the project, make sure you have Node.js and Yarn installed on your machine and config `.env.local` in `/packages/client` by exapmle from `.env.example`
 
 To start both the client and server applications in development mode, run:
 
