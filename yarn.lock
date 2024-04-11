@@ -4611,7 +4611,7 @@ client-only@0.0.1:
     react-query "^3.39.3"
     react-redux "^9.1.0"
     react-toastify "^10.0.5"
-    server "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-client-0.1.0-ea7b1b5f-6d89-449c-8ae6-4e17a9774ef2-1712820587889/node_modules/server"
+    server "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-client-0.1.0-a55f32ba-d3d5-4405-bc29-244f62187e78-1712838320074/node_modules/server"
     tailwind-scrollbar "^3.1.0"
     tailwindcss "^3.3.0"
 
@@ -6328,9 +6328,9 @@ fraction.js@^4.3.7:
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
 framer-motion@^11.0.25:
-  version "11.0.27"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.0.27.tgz#6881cb76e9dbbdc194353e5560ff93f3bd727a5d"
-  integrity sha512-OmY1hnBXxUfvQTuoPqumAiXYPEt8jY31Fqbmihf/NR29XUL9BkRPHrqVqtJS7TLKriwRt+0pbwiO9tnziZTJzA==
+  version "11.0.28"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.0.28.tgz#b55a61d12c61a3a9e89084a1ff006b20e367436a"
+  integrity sha512-j/vNYTCH5MX5sY/3dwMs00z1+qAqKX3iIHF762bwqlU814ooD5dDbuj3pA0LmIT5YqyryCkXEb/q+zRblin0lw==
   dependencies:
     tslib "^2.4.0"
 
@@ -10734,7 +10734,7 @@ serve-static@1.15.0:
     bcrypt "^5.0.1"
     class-transformer "^0.5.1"
     class-validator "^0.14.1"
-    client "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-server-0.1.0-537e3bf8-486b-4687-9d8c-b64b657c88b9-1712820587888/node_modules/client"
+    client "file:../../../../Users/wonderw/Library/Caches/Yarn/v6/npm-server-0.1.0-aa030c3b-3b6b-4603-9743-08718b7e1313-1712838320077/node_modules/client"
     compression "^1.7.4"
     cookie-parser "^1.4.6"
     cors "^2.8.5"
