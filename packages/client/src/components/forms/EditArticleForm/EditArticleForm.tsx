@@ -38,7 +38,8 @@ export const EditArticleForm = ({
   article: IArticle;
   closeModal: TVoidFunction;
 }) => {
-  const { mutateAsync, isLoading } = useUpdateArticle();
+  const { mutateAsync, status } = useUpdateArticle();
+  const isLoading = status === 'pending';
 
   const { _id, description, enclosureUrl, title } = article;
 

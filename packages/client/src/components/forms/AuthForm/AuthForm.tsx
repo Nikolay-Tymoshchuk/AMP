@@ -49,8 +49,11 @@ const { LOGIN, SIGNUP } = ROUTES;
 
 export const AuthForm: FC<IFormAuthProps> = ({ typeAuth }) => {
   const isLoginType = typeAuth === TYPE_AUTH.LOGIN;
-  const { mutateAsync: login, isLoading: isLoadingLogin } = useLogin();
-  const { mutateAsync: signup, isLoading: isLoadingSignup } = useSignup();
+  const { mutateAsync: login, status: loadingStatus } = useLogin();
+  const { mutateAsync: signup, status: signupStatus } = useSignup();
+
+  const isLoadingLogin = loadingStatus === 'pending';
+  const isLoadingSignup = signupStatus === 'pending';
 
   const {
     register,
@@ -181,10 +184,9 @@ export const AuthForm: FC<IFormAuthProps> = ({ typeAuth }) => {
                       labelText={roles.labels[role]}
                       register={register('role', { required: 'required' })}
                       value={role}
-                      shapeRadio="circle"
                       watchValue={watch('role')}
-                      labelGap="20px"
                       error={errors?.role?.message}
+                      id={role}
                     />
                   </li>
                 ))}

@@ -14,7 +14,7 @@ import {
 } from '@/interfaces/auth.interfaces';
 import { CommonResponse } from '@/interfaces/common.interfaces';
 
-const { API_AUTH, API_LOGIN, API_SIGNUP, API_LOGOUT } = ROUTES;
+const { API_LOGIN, API_SIGNUP, API_LOGOUT } = ROUTES;
 
 const { AUTH } = KEYS;
 

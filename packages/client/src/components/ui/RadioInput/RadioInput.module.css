@@ -1,38 +1,9 @@
 .radioLabel {
-  @apply flex items-center;
+  @apply flex items-center gap-5;
 }
 
 .radioLabel input:focus + .radioSquareWrapper {
   @apply outline outline-offset-2 outline-accent;
-}
-
-.radioLabelSmallGap {
-  @apply gap-5;
-}
-
-.radioLabelLargeGap {
-  gap: 12px;
-  @apply gap-3 lg:gap-6;
-}
-
-.radioLabelFontWeight {
-  @apply font-normal;
-}
-
-.radioLabelFontSizeSmall {
-  @apply text-base;
-}
-
-.radioLabelFontSizeLarge {
-  @apply text-18/28;
-}
-
-.radioSquareWrapper {
-  @apply cursor-pointer flex items-center justify-center min-w-5 h-5 rounded border border-grey;
-}
-
-.radioSquareWrapperError {
-  @apply border border-red;
 }
 
 .radioCircleWrapper {
