@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Montserrat, Overpass, Nunito_Sans } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 
@@ -80,7 +81,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${overpass.variable} ${nunitoSans.variable}`}
       >
-        <Provider>{children}</Provider>
+        <Provider>
+          <Suspense>{children}</Suspense>
+        </Provider>
         <ToastContainer
           position="top-right"
           autoClose={3000}

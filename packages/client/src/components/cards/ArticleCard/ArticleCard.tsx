@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 
 import { ALink } from '@/components/ui/ALink';
+import ImgPlaceholder from '~/public/images/image_placeholder_178-178..webp';
 
 import { IArticle } from '@/interfaces/article.interfaces';
 
@@ -21,18 +22,16 @@ export const ArticleCard: FC<IArticle> = ({
       className="rounded w-full h-full shadow-md overflow-hidden flex flex-col border border-accentGrey text-xs bg-indigo-50"
     >
       <div className="border-b border-b-accentGrey grid grid-cols-[100px,_auto] gap-x-3 bg-blue-100">
-        {enclosureUrl && (
-          <div className="border-r border-r-accentGrey">
-            <Image
-              width={160}
-              height={90}
-              className="w-25 h-auto "
-              alt={title}
-              src={enclosureUrl}
-              itemType={enclosureType || undefined}
-            />
-          </div>
-        )}
+        <div className="border-r border-r-accentGrey w-25 aspect-[3/2] content-center overflow-hidden">
+          <Image
+            width={160}
+            height={90}
+            className="w-25 h-auto"
+            alt={title}
+            src={enclosureUrl || ImgPlaceholder}
+            itemType={enclosureType || undefined}
+          />
+        </div>
         <div className="py-1.5 pr-1.5">
           <h3 className="font-semibold  line-clamp-3">{title}</h3>
         </div>

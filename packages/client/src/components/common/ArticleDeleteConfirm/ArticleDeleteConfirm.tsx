@@ -6,15 +6,17 @@ import { useArticles } from '@/lib/hooks/useArticles';
 import { Button } from '@/components/ui/CommonsButtons/Button';
 import { Title } from '@/components/ui/Title';
 
-import {
+import data from '@/data/data.json';
+import { TVoidFunction } from '~/types/components.types';
+import s from './ArticleDeleteConfirm.module.css';
+
+const {
   deleteArticleApprove,
   deleteArticle,
   deleteArticleCancel,
   successDeleteArticle,
   errorDeleteArticle,
-} from '@/data/data.json';
-import { TVoidFunction } from '~/types/components.types';
-import s from './ArticleDeleteConfirm.module.css';
+} = data;
 
 interface IGoogleInfoModalProps {
   articleId: string;

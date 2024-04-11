@@ -18,6 +18,7 @@ import { Pagination } from '@/components/ui/Pagination';
 import { Spinner } from '@/components/ui/Spinner';
 import { Title } from '@/components/ui/Title';
 import { PrimaryLayout } from '@/layout/PrimaryLayout';
+import { DESCRIPTION, NEXTAPI_URL, NEXTAUTH_URL, TITLE } from '@/config';
 
 import data from '@/data/data.json';
 import { IArticle } from '@/interfaces/article.interfaces';

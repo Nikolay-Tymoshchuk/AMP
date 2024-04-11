@@ -19,9 +19,9 @@ export const useAuthHook = () => {
 
     if (session) {
       setIsAuthenticated(true);
-      setRole(session.user.role);
-      setName(session.user.name);
-      setToken(session.user.token);
+      setRole(session.user?.role);
+      setName(session.user?.name);
+      setToken(session.user?.token);
     }
   }, [session, status]);
 

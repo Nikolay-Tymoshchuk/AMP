@@ -2,7 +2,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  // transpileModules: ['@nextjs-lerna/shared'],
+  transpileModules: ['@server', '@root'],
   webpack: config => {
     config.module.rules.push({
       test: /\.svg$/,

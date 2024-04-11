@@ -22,7 +22,7 @@ export const useArticles = () => {
   return {
     useGetArticles: () =>
       useQuery([ARTICLES, searchParams], () => getArticles(searchParams), {
-        keepPreviousData: true,
+        keepPreviousData: false,
         retry: 2,
         retryDelay: 2000,
         refetchOnWindowFocus: false,

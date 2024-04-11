@@ -15,6 +15,12 @@ export interface IUser extends IUserCreate {
   token: string;
 }
 
+export interface IUserSession {
+  role: USER_ROLE;
+  name: string;
+  token: string;
+}
+
 export interface ICurrentUser extends IUser {
   _id: string;
   email: string;

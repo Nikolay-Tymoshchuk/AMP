@@ -1,4 +1,5 @@
-import { UserRole } from '@/interfaces/auth.interfaces';
+import { IUser, IUserSession } from '@/interfaces/auth.interfaces';
+import { USER_ROLE } from '@/interfaces/enums';
 import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -30,9 +31,22 @@ export const authOptions: NextAuthOptions = {
       return { ...token, ...user };
     },
     async session({ session, token }) {
-      session.user.token = token.token as string;
-      session.user.name = token.name as string;
-      session.user.role = token.role as UserRole;
+      const user: IUserSession = session.user;
+
+      if (typeof token.token === 'string') {
+        user.token = token.token;
+      }
+
+      if (typeof token.name === 'string') {
+        user.name = token.name;
+      }
+
+      if (
+        typeof token.role === 'string' &&
+        Object.values(USER_ROLE).includes(token.role as USER_ROLE)
+      ) {
+        user.role = token.role as USER_ROLE;
+      }
 
       return session;
     },

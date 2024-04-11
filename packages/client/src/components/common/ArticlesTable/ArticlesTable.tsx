@@ -23,7 +23,9 @@ import {
 } from '@/components/ui/Table/TableUi';
 import { SVG_ARROW_SMALL_DOWN_10_10 } from '@/components/ui/Icons';
 
-import { listIsEmpty } from '@/data/data.json';
+import data from '@/data/data.json';
+
+const { listIsEmpty } = data;
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

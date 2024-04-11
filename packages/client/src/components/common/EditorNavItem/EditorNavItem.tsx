@@ -31,7 +31,7 @@ export const EditorNavItem = () => {
         isEditorPage && 'bg-accent',
       )}
     >
-      {labels[role] || labels.GUEST}
+      {role ? labels[role] : labels.GUEST}
     </Link>
   );
 };
