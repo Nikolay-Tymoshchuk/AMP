@@ -35,6 +35,8 @@ The functionality of the private page /role changes depending on the user's role
 
 You can also register your own user and role.
 
+---
+
 ## 🖥️ Client Application
 
 The client application is built with Next.js and uses React Query for data fetching, and Tailwind CSS for styling.
@@ -54,6 +56,8 @@ $  npm run dev
 ## ⚠️ Unauthorized Status
 
 If the server returns a 401 status, you will be logged out and redirected to the /login page. This can happen if the token has expired
+
+---
 
 ## 🌐 Server Application
 
@@ -110,7 +114,3 @@ Before starting the project, make sure to set up your database credentials in th
 - **Process Management:** Utilize PM2 or Nodemon for process management and automatic application restarts during development and production.
 
 - **SWC Compiler:** Utilize the SWC compiler for faster TypeScript compilation and improved performance.
-
-```
-
-```
