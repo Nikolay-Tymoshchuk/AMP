@@ -2,12 +2,6 @@
 import { useSearchParams } from 'next/navigation';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
-// import {
-//   deleteArticle,
-//   // getArticleById,
-//   getArticles,
-//   updateArticle,
-// } from '@/lib/features/articlesApi';
 import { useAxiosAuth } from './useAxiosAuth';
 
 import { KEYS } from '@/interfaces/enums';
@@ -33,18 +27,10 @@ const useGetArticles = () => {
     return response.data;
   };
 
-  console.log('getArticles', getArticles(searchParams));
-
   return useQuery({
     queryKey: [ARTICLES, searchParams],
     queryFn: () => getArticles(searchParams),
   });
-  // {
-  //     keepPreviousData: false,
-  //     retry: 2,
-  //     retryDelay: 2000,
-  //     refetchOnWindowFocus: false,
-  //   },
 };
 
 const useUpdateArticle = () => {

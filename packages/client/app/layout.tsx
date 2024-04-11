@@ -77,26 +77,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk">
-      <body
-        className={`${montserrat.variable} ${overpass.variable} ${nunitoSans.variable}`}
-      >
-        <Suspense>
-          <Provider>{children}</Provider>
-        </Suspense>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
-      </body>
-    </html>
+    <Provider>
+      <html lang="uk">
+        <body
+          className={`${montserrat.variable} ${overpass.variable} ${nunitoSans.variable}`}
+        >
+          {' '}
+          <Suspense>
+            <Provider>{children}</Provider>
+          </Suspense>
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+        </body>
+      </html>
+    </Provider>
   );
 }
