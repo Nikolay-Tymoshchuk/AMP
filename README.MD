@@ -29,7 +29,7 @@ For testing purposes, four users with different roles have been created:
 - **CUSTOMER:** - customer@gmail.com
 - **GUEST:** - guest@gmail.com
 
-The password for all these users is 12345678.
+The password for all these users is 12345678!.
 
 The functionality of the private page /role changes depending on the user's role.
 
