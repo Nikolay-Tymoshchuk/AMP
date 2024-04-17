@@ -82,10 +82,7 @@ export default function RootLayout({
         <body
           className={`${montserrat.variable} ${overpass.variable} ${nunitoSans.variable}`}
         >
-          {' '}
-          <Suspense>
-            <Provider>{children}</Provider>
-          </Suspense>
+          <Suspense>{children}</Suspense>
           <ToastContainer
             position="top-right"
             autoClose={3000}
